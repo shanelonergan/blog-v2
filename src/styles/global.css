@@ -1,16 +1,35 @@
 :root {
-  --main-brown: #5e380e;
+  --main-brown: #2b1d0e;
   --main-yellow: #f1d248;
   --main-orange: #f47b01;
   --main-red: #dd2a00;
   --main-teal: #7cedda;
+  --main-cream: #fffbf1
 }
 
+html {
+  background-color: var(--main-brown);
+}
 
 p {
-    color: var(--main-brown);
+    color: var(--main-cream);
+}
+
+a {
+  color: var(--main-teal)
 }
 
 .title {
   color: var(--main-orange)
+}
+
+.twitter {
+  color: var(--main-yellow)
+}
+
+.date {
+  color: var(--main-yellow);
+}
+.footer {
+  color: var(--main-cream);
 }

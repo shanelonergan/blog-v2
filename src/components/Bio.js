@@ -25,12 +25,13 @@ function Bio() {
                 marginBottom: 0,
                 minWidth: 50,
                 borderRadius: `100%`,
+                border: `2px solid #dd2a00`
               }}
             />
             <p>
               The personal blog of <strong>{author}</strong>. NYC based software engineer, actor, director, and musician. Documenting my journey from the stage to the computer screen.
               {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
+              <a className='twitter' href={`https://twitter.com/${social.twitter}`}>
                 You should follow me on Twitter
               </a>
             </p>
@@ -45,7 +46,7 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 100, height: 100) {
           ...GatsbyImageSharpFixed
         }
       }
