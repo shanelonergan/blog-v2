@@ -33,10 +33,10 @@ function Bio() {
             />
             </div>
             <p className='bio'>
-              The personal blog of <strong>{author}</strong>. NYC based software engineer, actor, director, and musician. Documenting my journey from the stage to the computer screen.
+              The personal blog of <strong>{author}</strong>. NYC based software engineer, actor, director, and musician. Documenting my journey from the stage to the computer screen. To keep up to date,
               {` `}
               <a className='twitter' href={`https://twitter.com/${social.twitter}`}>
-                You should follow me on Twitter
+                you should follow me on Twitter.
               </a>
             </p>
           </div>
