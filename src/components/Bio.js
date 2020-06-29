@@ -17,18 +17,22 @@ function Bio() {
               marginBottom: rhythm(2.5),
             }}
           >
+            <div
+              className='img-container'
+            >
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
-                minWidth: 50,
+                minWidth: 100,
                 borderRadius: `100%`,
                 border: `2px solid #dd2a00`
               }}
             />
-            <p>
+            </div>
+            <p className='bio'>
               The personal blog of <strong>{author}</strong>. NYC based software engineer, actor, director, and musician. Documenting my journey from the stage to the computer screen.
               {` `}
               <a className='twitter' href={`https://twitter.com/${social.twitter}`}>

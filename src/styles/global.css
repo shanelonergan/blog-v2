@@ -23,6 +23,16 @@ a {
   color: var(--main-orange)
 }
 
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio {
+  margin-bottom: 0;
+}
+
 .twitter {
   color: var(--main-yellow)
 }
