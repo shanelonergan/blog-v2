@@ -11,7 +11,7 @@ html {
   background-color: var(--main-brown);
 }
 
-p {
+body {
     color: var(--main-cream);
 }
 
@@ -19,8 +19,12 @@ a {
   color: var(--main-teal)
 }
 
-.title {
+h1 {
   color: var(--main-orange)
+}
+
+h2 {
+  color: var(--main-yellow);
 }
 
 .img-container {
