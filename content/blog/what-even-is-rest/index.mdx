@@ -1,0 +1,97 @@
+---
+title: What Even Is REST?
+date: '2020-4-10'
+---
+
+Welcome to my new series, **What Even Is?** In this series I will be examining common programming concepts that I have encountered and used throughout my learning so far, but that I didn't always fully grasp. For the first post in this series, I thought that REST would be the perfect concept. The first programming language I learned was Ruby, and of course Rails came soon after. The way I learned to build my first web server was through RESTful convention, and I understood how to build RESTFful APIs mainly through the [HTTP Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview). I knew how to follow convention for RESTful routes, but after a while I began to wonder if I really understood what REST was. As it turns out, I didn't! So I set out to learn. In this article I will walk through what I found out.
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [So, What is REST?](#so-what-is-rest)
+- [What is the origin of REST?](#what-is-the-origin-of-rest)
+- [What is the purpose of REST?](#what-is-the-purpose-of-rest)
+- [How does REST work?](#how-does-rest-work)
+- [What are the fundamentals of REST?](#what-are-the-fundamentals-of-rest)
+  - [Uniform Interface](#uniform-interface)
+  - [Client-Server Separation](#client-server-separation)
+  - [Stateless](#stateless)
+  - [Layered System](#layered-system)
+  - [Cacheable](#cacheable)
+  - [Code-On-Demand](#code-on-demand)
+- [Congrats!](#congrats)
+- [References](#references)
+- [Further Reading](#further-reading)
+
+## So, What is REST?
+
+REST is an architectural style for building APIs. This essentially means that it is a series or rules or standards for the interaction between a client and server. Even more simply, it is a guide for how your browser and server should talk to one another.
+
+## What is the origin of REST?
+
+REST was introduced in 2000 by computer scientist Roy Fielding as part of his [PhD dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). Fielding was also deeply involved in the early development of the World Wide Web, and was a principle author of the original HTTP specification.
+
+## What is the purpose of REST?
+
+The goal of REST was to create a web standard for client-server architecture. This standard would provide a roadmap for developers building new API's, as well as a making it easier to learn how to use others. REST helps unify API's and reduce variation, and thus additional learning, across the web.
+
+## How does REST work?
+
+REST stands for REpresentational State Transfer. This means that when we make a request to a RESTful API, the server will *transfer* a *representation* of the *state* of the requested information. For example, if I were to use Twitter's API to fetch a single user, it would return a snapshot of state of that user, including their information, tweets, likes, followers, etc.
+
+## What are the fundamentals of REST?
+
+There are 6 constraints for RESTful APIs:
+
+1. Uniform Interface
+2. Client-Server Separation
+3. Stateless
+4. Layered System
+5. Cacheable
+6. Code-on-demand (optional)
+
+In order for an API to be RESTful, it must follow at least the first 5 of these constraints. Lets take a deeper look at each of them:
+
+### Uniform Interface
+
+This means that the request to a RESTful API should look the same no matter its point of origin. Whether it is coming from a Chrome browser, a Python script, or a Linux server, all RESTful requests should have the same structure.
+
+### Client-Server Separation
+
+The server and the client exist in separate worlds. They can only interact through requests, which can only be made by the client, and responses, which can only be sent by the server in response to a request. Essentially, the server must simply sit and wait for a request from the client. Only then can it take action and send back the relevant information.
+
+### Stateless
+
+The server does not remember anything about the user who calls upon it. It only knows what is sent in the request. Thus, each individual request will contain everything the server needs to know to execute the request and send a response. The server has no knowledge of what is happening client-side, and vice versa.
+
+### Layered System
+
+The server and client are unaffected by the number of layers between theme. For example, there could be a security layer, a cacheing layer, and a load balancing layer, but none of these should effect how the client and server communicate.
+
+### Cacheable
+
+[Cacheing](https://restfulapi.net/caching/) is essentially the processes of storing frequently-accessed data so that you don't have to constantly be asking your server to find it and give it to you. Server responses must, implicitly or explicitly, be identified as cacheable or non-cacheable. If it is cacheable, it should include some sort of version number, and the client should know whether or not their version is up-to-date.
+
+### Code-On-Demand
+
+Clients should be able to request code from the server which, when received, can be executed by the client. This code can take many forms, such as a JavaScript script or Java applet. This constraint is optional, and thus is not required for an API to be considered RESTful.
+
+## Congrats!
+
+Viola! If your API follows the first 5 of these conventions, it is officially RESTful. Hopefully you now have a deeper understanding of REST and RESTful convention. Thank you so much for reading, and keep your eyes out for the next article in the "What even is..." series!
+
+## References
+
+- [REST - MDN Docs](https://developer.mozilla.org/en-US/docs/Glossary/REST)
+- [HTTP - MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [Chapter 5: Representation State Transfer - Roy Fielding](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+- [Cacheing - restfulapi](https://restfulapi.net/caching/)
+- [What is Rest? - Codecademy](https://www.codecademy.com/articles/what-is-rest)
+- [What is REST — A Simple Explanation for Beginners, Part 1 - Shif Ben Avraham](https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f)
+
+## Further Reading
+
+- [Are HTTP and REST the same thing?](http://restcookbook.com/Miscellaneous/rest-and-http/)
+- [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [RESTular: a Sinatra routing resource](http://www.restular.com/)
+
