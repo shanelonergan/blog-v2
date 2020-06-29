@@ -68,6 +68,11 @@ ul {
   margin-bottom: 1rem;
 }
 
+.code pre {
+  margin-bottom: 0;
+  font-family: 'Fira Code', monospace;
+}
+
 .footer {
   color: var(--main-cream);
 }
