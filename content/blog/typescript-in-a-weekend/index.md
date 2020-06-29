@@ -164,7 +164,7 @@ luckyNumber = undefined // ✅
 
 Never type represent the type of values that never occur. For example, a function that always throws an error when called will never return, so we can set the return type to `never`. An infinite loop could also have the return type `never`.
 
-```JavaScript
+```ts
 function throwError(msg: string): never {
     throw new Error(msg)
 }

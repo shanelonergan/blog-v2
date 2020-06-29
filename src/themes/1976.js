@@ -9,7 +9,7 @@ const theme = {
   },
   styles: [
     {
-      types: ["prolog", "constant", "builtin"],
+      types: ["prolog", "constant", "builtin", "important", "deleted"],
       style: {
         color: "#ff441a"
       }
@@ -20,12 +20,12 @@ const theme = {
         color: "#f1d248"
       }
     },
-    {
-      types: ["deleted"],
-      style: {
-        color: "#ff441a"
-      }
-    },
+    // {
+    //   types: ["deleted"],
+    //   style: {
+    //     color: "#ff441a"
+    //   }
+    // },
     {
       types: ["changed"],
       style: {
@@ -35,7 +35,7 @@ const theme = {
     {
       types: ["punctuation", "symbol"],
       style: {
-        color: "#fffbf1"
+        color: "#8ff0e0"
       }
     },
     {
@@ -45,7 +45,7 @@ const theme = {
       }
     },
     {
-      types: ["keyword", "variable"],
+      types: ["keyword", "variable", "boolean", "number"],
       style: {
         color: "#fe8c1b",
         fontStyle: "italic"
