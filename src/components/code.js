@@ -16,6 +16,7 @@ export const Code = ({ codeString, language, ...props }) => {
     )
   } else {
     return (
+      <div className='code'>
       <Highlight
         {...defaultProps}
         code={codeString}
@@ -34,6 +35,7 @@ export const Code = ({ codeString, language, ...props }) => {
           </pre>
         )}
       </Highlight>
+      </div>
     )
   }
 }

@@ -52,6 +52,14 @@ ul {
 .date {
   color: var(--main-yellow);
 }
+
+.code {
+  border: 3px solid var(--main-cream);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
 .footer {
   color: var(--main-cream);
 }

@@ -54,7 +54,7 @@ const theme = {
     {
       types: ["comment"],
       style: {
-        color: "rgb(98, 114, 164)"
+        color: "#744f25"
       }
     },
     {
