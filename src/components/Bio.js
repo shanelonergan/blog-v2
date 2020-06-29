@@ -28,11 +28,10 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in
-              Minneapolis building silly things.
+              The personal blog of <strong>{author}</strong>. NYC based software engineer, actor, director, and musician. Documenting my journey from the stage to the computer screen.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+                You should follow me on Twitter
               </a>
             </p>
           </div>
