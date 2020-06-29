@@ -17,6 +17,7 @@ class Layout extends React.Component {
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
+          className='title'
         >
           <Link
             style={{

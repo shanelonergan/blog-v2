@@ -1,0 +1,16 @@
+:root {
+  --main-brown: #5e380e;
+  --main-yellow: #f1d248;
+  --main-orange: #f47b01;
+  --main-red: #dd2a00;
+  --main-teal: #7cedda;
+}
+
+
+p {
+    color: var(--main-brown);
+}
+
+.title {
+  color: var(--main-orange)
+}
