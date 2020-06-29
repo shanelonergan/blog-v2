@@ -9,7 +9,7 @@ const theme = {
   },
   styles: [
     {
-      types: ["prolog", "constant", "builtin", "important", "deleted"],
+      types: ["prolog", "constant", "builtin", "important", "deleted", "type"],
       style: {
         color: "#ff441a"
       }
