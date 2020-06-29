@@ -2,6 +2,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+import seventysix from '../themes/1976'
+import vsDark from 'prism-react-renderer/themes/vsDark';
 
 export const Code = ({ codeString, language, ...props }) => {
   if (props['react-live']) {
@@ -14,7 +16,12 @@ export const Code = ({ codeString, language, ...props }) => {
     )
   } else {
     return (
-      <Highlight {...defaultProps} code={codeString} language={language}>
+      <Highlight
+        {...defaultProps}
+        code={codeString}
+        language={language}
+        theme={seventysix}
+      >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
             {tokens.map((line, i) => (

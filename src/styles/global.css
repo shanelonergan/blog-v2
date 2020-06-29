@@ -1,9 +1,9 @@
 :root {
   --main-brown: #2b1d0e;
   --main-yellow: #f1d248;
-  --main-orange: #f47b01;
-  --main-red: #dd2a00;
-  --main-teal: #7cedda;
+  --main-orange: #fe8c1b;
+  --main-red: #ff441a;
+  --main-teal: #8ff0e0;
   --main-cream: #fffbf1
 }
 
@@ -25,6 +25,14 @@ h1 {
 
 h2 {
   color: var(--main-yellow);
+}
+
+h3 {
+  color: var(--main-red)
+}
+
+ul {
+  margin-left: 1rem;
 }
 
 .img-container {
