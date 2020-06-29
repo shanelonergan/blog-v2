@@ -1,4 +1,5 @@
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+@import './fonts/dank-mono.css';
 
 code { font-family: 'Fira Code', monospace; }
 
@@ -58,7 +59,7 @@ ul {
 }
 
 .date {
-  color: var(--main-yellow);
+  color: var(--main-red);
 }
 
 .code {
@@ -70,7 +71,9 @@ ul {
 
 .code pre {
   margin-bottom: 0;
-  font-family: 'Fira Code', monospace;
+  font-family: 'dm', monospace;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .footer {
