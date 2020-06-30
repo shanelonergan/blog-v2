@@ -25,11 +25,11 @@ body {
 }
 
 a {
-  color: var(--main-teal)
+  color: var(--main-teal);
 }
 
 h1 {
-  color: var(--main-orange)
+  color: var(--main-orange);
 }
 
 h2 {
@@ -42,6 +42,10 @@ h3 {
 
 ul {
   margin-left: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
 }
 
 .img-container {
@@ -78,4 +82,10 @@ ul {
 
 .footer {
   color: var(--main-cream);
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+  }
 }
