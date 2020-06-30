@@ -29,7 +29,7 @@ function Bio() {
                 width: 100,
                 height: 100,
                 borderRadius: `100%`,
-                border: `2px solid #dd2a00`
+                border: `2px solid var(--main-red)`
               }}
             />
             </div>
