@@ -26,6 +26,7 @@ body {
 
 a {
   color: var(--main-teal);
+  transition: 0.25s
 }
 
 h1 {
@@ -90,6 +91,15 @@ ul {
   width: 25%;
   display: flex;
   justify-content: space-between;
+}
+
+.social a {
+  color: var(--main-yellow);
+}
+
+.social a:hover {
+  text-decoration: none !important;
+  color: var(--main-red);
 }
 
 @media only screen and (max-width: 600px) {

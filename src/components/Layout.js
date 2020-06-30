@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SocialLink from './SocialLink'
 import { faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 
@@ -73,10 +73,10 @@ class Layout extends React.Component {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </div>
           <div className='social'>
-            <FontAwesomeIcon icon={faTwitter} />
-            <FontAwesomeIcon icon={faLinkedin} />
-            <FontAwesomeIcon icon={faGithub} />
-            <FontAwesomeIcon icon={faCode} />
+            <SocialLink link='https://twitter.com/shane__lonergan' icon={faTwitter} />
+            <SocialLink link='https://www.linkedin.com/in/shane-lonergan/' icon={faLinkedin} />
+            <SocialLink link='https://github.com/shanelonergan' icon={faGithub} />
+            <SocialLink link='https://github.com/shanelonergan/blog-v2' icon={faCode} />
           </div>
         </footer>
       </div>
