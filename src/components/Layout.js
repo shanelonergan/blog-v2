@@ -73,10 +73,10 @@ class Layout extends React.Component {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </div>
           <div className='social'>
-            <SocialLink link='https://twitter.com/shane__lonergan' icon={faTwitter} />
-            <SocialLink link='https://www.linkedin.com/in/shane-lonergan/' icon={faLinkedin} />
-            <SocialLink link='https://github.com/shanelonergan' icon={faGithub} />
-            <SocialLink link='https://github.com/shanelonergan/blog-v2' icon={faCode} />
+            <SocialLink link='https://twitter.com/shane__lonergan' icon={faTwitter} tooltip='twitter' />
+            <SocialLink link='https://www.linkedin.com/in/shane-lonergan/' icon={faLinkedin} tooltip='linkedin' />
+            <SocialLink link='https://github.com/shanelonergan' icon={faGithub} tooltip='github' />
+            <SocialLink link='https://github.com/shanelonergan/blog-v2' icon={faCode} tooltip='sourcecode' />
           </div>
         </footer>
       </div>

@@ -59,7 +59,7 @@ ul {
   margin-bottom: 0;
 }
 
-.twitter {
+.bio a {
   color: var(--main-yellow)
 }
 
@@ -104,35 +104,36 @@ ul {
 
 .tooltip {
 	border-radius: 10px;
-	padding: 10px 15px;
+	padding: 5px 10px;
 	position: relative;
-	margin: 15px;
-	text-align: center;
+  text-align: center;
 }
 
 .tooltip::after {
-	background-color: #333;
+	background-color: var(--main-cream);
 	border-radius: 10px;
-	color: var(--main-yellow);
+	color: var(--main-brown);
 	display: none;
-	padding: 10px 15px;
+	padding: 5px 10px;
 	position: absolute;
 	text-align: center;
-	z-index: 999;
+  z-index: 999;
+  font-size: 0.75rem;
+  transition: display 1s, opacity 0.5s linear;
 }
 
 .tooltip::before {
-	background-color: #333;
+	background-color: var(--main-cream);
 	content: ' ';
 	display: none;
 	position: absolute;
 	width: 15px;
 	height: 15px;
-	z-index: 999;
+  z-index: 999;
 }
 
 .tooltip:hover::after {
-	display: block;
+  display: block;
 }
 
 .tooltip:hover::before {
@@ -145,14 +146,26 @@ ul {
 	transform: translate(-50%, calc(-100% - 10px));
 }
 
-.tooltip.top.twitter::after {
-  content: 'twitter';
-}
-
 .tooltip.top::before {
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
+}
+
+.tooltip.top.twitter::after {
+  content: 'Twitter';
+}
+
+.tooltip.top.github::after {
+  content: 'GitHub';
+}
+
+.tooltip.top.linkedin::after {
+  content: 'LinkedIn';
+}
+
+.tooltip.top.sourcecode::after {
+  content: 'Code';
 }
 
 @media only screen and (max-width: 600px) {
