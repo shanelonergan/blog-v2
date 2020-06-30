@@ -82,6 +82,14 @@ ul {
 
 .footer {
   color: var(--main-cream);
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 600px) {

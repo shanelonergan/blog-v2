@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
 
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography'
 
 class Layout extends React.Component {
   render() {
@@ -16,7 +19,7 @@ class Layout extends React.Component {
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
-          className='title'
+          className="title"
         >
           <Link
             style={{
@@ -63,10 +66,18 @@ class Layout extends React.Component {
       >
         {header}
         {children}
-        <footer className='footer'>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer className="footer">
+          <div>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </div>
+          <div className='social'>
+            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faLinkedin} />
+            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={faCode} />
+          </div>
         </footer>
       </div>
     )
