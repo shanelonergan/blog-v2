@@ -3,11 +3,9 @@ import { render } from 'react-dom'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import seventysix from '../themes/1976'
-import Prism from "prism-react-renderer/prism";
-
-(typeof global !== "undefined" ? global : window).Prism = Prism;
-
-require("prismjs/components/prism-ruby");
+import Prism from 'prism-react-renderer/prism';
+(typeof global !== 'undefined' ? global : window).Prism = Prism;
+require('prismjs/components/prism-ruby');
 
 
 export const Code = ({ codeString, language, ...props }) => {

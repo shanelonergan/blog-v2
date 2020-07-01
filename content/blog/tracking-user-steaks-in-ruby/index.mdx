@@ -41,7 +41,7 @@ Our application is built on a ruby-on-rails back-end, with a vanilla JavaScript 
 
 First we need to create a Ruby class of User, which inherits from `ApplicationRecord`, a rails model that includes the [Active Record](https://guides.rubyonrails.org/active_record_basics.html) ORM (more on Object-Relational-Mappers [here](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a)). We can then add the ActiveRecord syntax for a has-many relationship as seen on line 2. This allows us to access all of a User's sessions by simply calling `.sessions` on in instance of a `User`. Additionally, Active Record relationships can take a second argument, [scope](https://edgeguides.rubyonrails.org/association_basics.html#scopes-for-belongs-to), which allows us to customize the SQL query. We will want to haver our array ordered from most recent date to least recent date, which can be accomplished if we query for _**descending**_ order:
 
-```javascript
+```ruby
 has_many :sessions, -> {order "created_at DESC"}
 ```
 
