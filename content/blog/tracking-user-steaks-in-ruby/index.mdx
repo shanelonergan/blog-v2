@@ -10,42 +10,42 @@ With streaks being such a popular feature, a [friend](https://medium.com/@avijit
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-  - [The goal](#the-goal)
-  - [The solution](#the-solution)
-  - [The breakdown](#the-breakdown)
-    - [Step 1: Set up relationships](#step-1-set-up-relationships)
-    - [Step 2: Define an instance method](#step-2-define-an-instance-method)
-    - [Step 3: Create an array of dates](#step-3-create-an-array-of-dates)
-    - [Step 3: Calculate the streak](#step-3-calculate-the-streak)
-    - [Congrats! You can now calculate user streaks in your rails application](#congrats-you-can-now-calculate-user-streaks-in-your-rails-application)
-  - [GitHub Gist](#github-gist)
-  - [References](#references)
+- [The goal](#the-goal)
+- [The solution](#the-solution)
+- [The breakdown](#the-breakdown)
+   - [Step 1: Set up relationships](#step-1-set-up-relationships)
+   - [Step 2: Define an instance method](#step-2-define-an-instance-method)
+   - [Step 3: Create an array of dates](#step-3-create-an-array-of-dates)
+   - [Step 3: Calculate the streak](#step-3-calculate-the-streak)
+   - [Congrats! You can now calculate user streaks in your rails application](#congrats-you-can-now-calculate-user-streaks-in-your-rails-application)
+- [GitHub Gist](#github-gist)
+- [References](#references)
 
-### The goal
+## The goal
 
 Track the number of consecutive days a logged-in user completed a breathing cycle, and display that number on the home page of our application. When the user completes a new session on a consecutive day for the first time, that number should update immediately.
 
-### The solution
+## The solution
 
 After a few unsuccessful attempts at using gems or code-snippets, we decided it would be easier and a better learning experience to write our own code. We also opted to track the streaks in the back end, because Ruby makes working with dates and times simpler. Here is the final version:
 
 ![image of final code](./full-code.jpg)
 
-### The breakdown
+## The breakdown
 
 Our application is built on a ruby-on-rails back-end, with a vanilla JavaScript front end. There are two models: `User` and `Session`. A `Session` *belongs to* a `User`, and a `User` *has many* `Sessions`.
 
-#### Step 1: Set up relationships
+### Step 1: Set up relationships
 
 ![image of relationships](./relationships.jpg)
 
 First we need to create a Ruby class of User, which inherits from `ApplicationRecord`, a rails model that includes the [Active Record](https://guides.rubyonrails.org/active_record_basics.html) ORM (more on Object-Relational-Mappers [here](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a)). We can then add the ActiveRecord syntax for a has-many relationship as seen on line 2. This allows us to access all of a User's sessions by simply calling `.sessions` on in instance of a `User`. Additionally, Active Record relationships can take a second argument, [scope](https://edgeguides.rubyonrails.org/association_basics.html#scopes-for-belongs-to), which allows us to customize the SQL query. We will want to haver our array ordered from most recent date to least recent date, which can be accomplished if we query for _**descending**_ order:
 
-```ruby
+```javascript
 has_many :sessions, -> {order "created_at DESC"}
 ```
 
-#### Step 2: Define an instance method
+### Step 2: Define an instance method
 
 ![image of variables](./instance-method.jpg)
 
@@ -63,7 +63,7 @@ Time.now.to_date
 => 2019-10-15
 ```
 
-#### Step 3: Create an array of dates
+### Step 3: Create an array of dates
 
 ![image of dates array](./unique-dates.jpg)
 
@@ -85,7 +85,7 @@ end
 
 Finally, we need to establish a default value for the `streak_count`, `0`. We now have most of the variables we will need to calculate the streak!
 
-#### Step 3: Calculate the streak
+### Step 3: Calculate the streak
 
 For this step, we will take advantage of the Ruby enumerable method `reduce`. If you are not familiar with reduce, I would recommend checking out this [great article](https://mixandgo.com/learn/what-is-a-ruby-reducer).
 
@@ -136,7 +136,7 @@ Finally, we want to create an *if* statement that determines when to increment t
 
 **important:** Don't forget to return the streak count at the end of the `streak method`, or else the return value will be the final memo from our reducer.
 
-#### Congrats! You can now calculate user streaks in your rails application
+### Congrats! You can now calculate user streaks in your rails application
 
 This code should be modifiable to work with any Active Record model with a *has_many* relationship. Good luck tracking all those streaks!
 
