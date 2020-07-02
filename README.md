@@ -7,6 +7,7 @@ The personal blog of [Shane Lonergan](https://shanelonergan.dev). NYC based soft
 - [Gatsby](https://www.gatsbyjs.org/)
 - [Gatsby Starter Blog MDX](https://github.com/hagnerd/gatsby-starter-blog-mdx) template
 - Custom CSS
+  - Tooltips inspired by [Florin Pop](https://www.florin-pop.com/blog/2019/05/pure-css-tooltip/)
 - Code Samples
   - [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer)
   - [Custom Syntax Theme](./src/themes/1976.js)
@@ -16,4 +17,3 @@ The personal blog of [Shane Lonergan](https://shanelonergan.dev). NYC based soft
 - Fonts
   - Code: [Dank Mono](https://dank.sh/)
   - Blog: [Merriweather](https://fonts.google.com/specimen/Merriweather)
-
