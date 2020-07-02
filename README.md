@@ -13,4 +13,6 @@ The personal blog of [Shane Lonergan](https://shanelonergan.dev). NYC based soft
 - Color Theme
   - Blog and syntax theme based on the [1976 keycap set](https://pimpmykeyboard.com/sa-1976-keyset-two-shot/)
 
-<img src="content/assets/1976.jpg" alt="picture of 1976 keyboard" width="200"/>
+<div>
+<img src="content/assets/1976.jpg" alt="picture of 1976 keyboard" width="200" style="margin-left:15px"/>
+</div>
