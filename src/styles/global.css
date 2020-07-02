@@ -163,6 +163,19 @@ ul {
 	transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
 }
 
+.tooltip.left::after {
+  content: 'Check out my portfolio!';
+  top: 25.2%;
+  left: 0;
+  transform: translateX(calc(-100% - 10px));
+}
+
+.tooltip.left::before {
+  top: 48%;
+  left: 0;
+  transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
+}
+
 .tooltip.top.twitter::after {
   content: 'Twitter';
 }

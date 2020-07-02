@@ -19,6 +19,7 @@ function Bio() {
           >
             <div className="img-container">
               <a href="https://shanelonergan.dev/" target='_blank'>
+                <div className='tooltip left'>
                 <Image
                   fixed={data.avatar.childImageSharp.fixed}
                   alt={author}
@@ -31,6 +32,7 @@ function Bio() {
                     border: `2px solid var(--main-red)`,
                   }}
                 />
+                </div>
               </a>
             </div>
             <p className="bio">
