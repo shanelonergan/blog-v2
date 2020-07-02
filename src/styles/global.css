@@ -55,6 +55,17 @@ ul {
   align-items: center;
 }
 
+.img-container a {
+  box-shadow: none !important;
+  transition: 0.5s;
+  margin-top: 8px;
+}
+
+.img-container a:hover {
+  box-shadow: none !important;
+  transform: scale(1.1);
+}
+
 .bio {
   margin-bottom: 0;
 }

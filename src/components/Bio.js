@@ -17,26 +17,31 @@ function Bio() {
               marginBottom: rhythm(2.5),
             }}
           >
-            <div
-              className='img-container'
-            >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                width: 100,
-                height: 100,
-                borderRadius: `100%`,
-                border: `2px solid var(--main-red)`
-              }}
-            />
+            <div className="img-container">
+              <a href="https://shanelonergan.dev/" target='_blank'>
+                <Image
+                  fixed={data.avatar.childImageSharp.fixed}
+                  alt={author}
+                  style={{
+                    marginRight: rhythm(1 / 2),
+                    marginBottom: 0,
+                    width: 100,
+                    height: 100,
+                    borderRadius: `100%`,
+                    border: `2px solid var(--main-red)`,
+                  }}
+                />
+              </a>
             </div>
-            <p className='bio'>
-              The personal blog of <strong>{author}</strong>. NYC based software engineer, actor, director, and musician. Documenting my journey from the stage to the computer screen. To keep up to date,
+            <p className="bio">
+              The personal blog of <strong>{author}</strong>. NYC based software
+              engineer, actor, director, and musician. Documenting my journey
+              from the stage to the computer screen. To keep up to date,
               {` `}
-              <a className='twitter' href={`https://twitter.com/${social.twitter}`}>
+              <a
+                className="twitter"
+                href={`https://twitter.com/${social.twitter}`}
+              >
                 you should follow me on Twitter.
               </a>
             </p>
