@@ -5,7 +5,7 @@ export default function SocialButton({icon, link, tooltip}) {
     return (
         <div className={'tooltip top ' + tooltip}>
             <a href={link} target='_blank'>
-                <FontAwesomeIcon icon={icon}/>
+                <FontAwesomeIcon icon={icon} size='lg'/>
             </a>
         </div>
     )
