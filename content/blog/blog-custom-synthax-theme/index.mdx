@@ -129,6 +129,97 @@ export default theme;
 To modify this file, I am first going to remove the types since I am not using TypeScript. Then, I will define a set of color variables at the top of the file.
 
 ```js
-// src/themes/seventysix.js
+// src/themes/1976.js
+const darkBrown= '#744f25'
+const brown = '#2b1d0e'
+const yellow = '#f1d248'
+const orange = '#fe8c1b'
+const red = '#fb4f28'
+const teal = '#8ff0e0'
+const cream = '#fffbf1'
+
+const theme = {
+    // ...
+}
 
 ```
+
+Now, time for the fun part! Experiment with which colors you want to assign to the different keywords. My configuration is tsill a work in progress, but currently looks like this:
+
+```js
+const darkBrown= '#744f25'
+const brown = '#2b1d0e'
+const yellow = '#f1d248'
+const orange = '#fe8c1b'
+const red = '#fb4f28'
+const teal = '#8ff0e0'
+const cream = '#fffbf1'
+
+const theme = {
+  plain: {
+    color: cream,
+    backgroundColor: brown
+  },
+  styles: [
+    {
+      types: ["prolog", "constant", "builtin", "important", "deleted", "type", "attr-name"],
+      style: {
+        color: red
+      }
+    },
+    {
+      types: ["inserted", "function"],
+      style: {
+        color: yellow
+      }
+    },
+    {
+      types: ["changed"],
+      style: {
+        color: yellow
+      }
+    },
+    {
+      types: ["punctuation", "symbol"],
+      style: {
+        color: teal
+      }
+    },
+    {
+      types: ["string", "char", "selector"],
+      style: {
+        color: teal
+      }
+    },
+    {
+      types: ["keyword", "variable", "boolean", "number"],
+      style: {
+        color: orange,
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["comment"],
+      style: {
+        color: darkBrown
+      }
+    },
+    {
+      types: ["tag"],
+      style: {
+        color: yellow
+      }
+    }
+  ]
+};
+
+export default theme;
+```
+
+Notice how you can set some keywords to be italic with the `fontStyle` attribute in the `style` object.
+
+Once you are done with your theme, you just need to import it and then pass it as the value for the theme prop in the `Highlight` component, as we did when changing the default theme.
+
+## Congrats!
+
+You can now make a custome synthax theme for your code symples using prism-react-renderer. Thank you so much for reading, and best of luck with your themes!
