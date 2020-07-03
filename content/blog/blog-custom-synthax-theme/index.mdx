@@ -25,7 +25,6 @@ import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import dracula from 'prism-react-renderer/themes/dracula'
 
-
 export const Code = ({ codeString, language, ...props }) => {
     return (
       <div className='code'>
@@ -50,4 +49,86 @@ export const Code = ({ codeString, language, ...props }) => {
       </div>
     )
 }
+```
+
+## Adding a custom theme
+
+WWe are going to define our custome theme in a separate JavaScript file, and then import it just as we did in the last section. You can have this file live wherever you want, but I keep mine in a folder at `src/themes`. I would reccomend modeling your JS file after one of the [theme files](https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/themes/dracula.js) in prism-react-renderer. The file will contain an object with two keys: `plain`, which defines the standard text and background colors; `styles`, where you can define colors and text styles based on individual keyword types. The dracula theme from prism-react-renderer file looks like this:
+
+```ts
+// prism-react-renderer/src/themes/dracula.js
+import type { PrismTheme } from "../types";
+
+var theme: PrismTheme = {
+  plain: {
+    color: "#F8F8F2",
+    backgroundColor: "#282A36"
+  },
+  styles: [
+    {
+      types: ["prolog", "constant", "builtin"],
+      style: {
+        color: "rgb(189, 147, 249)"
+      }
+    },
+    {
+      types: ["inserted", "function"],
+      style: {
+        color: "rgb(80, 250, 123)"
+      }
+    },
+    {
+      types: ["deleted"],
+      style: {
+        color: "rgb(255, 85, 85)"
+      }
+    },
+    {
+      types: ["changed"],
+      style: {
+        color: "rgb(255, 184, 108)"
+      }
+    },
+    {
+      types: ["punctuation", "symbol"],
+      style: {
+        color: "rgb(248, 248, 242)"
+      }
+    },
+    {
+      types: ["string", "char", "tag", "selector"],
+      style: {
+        color: "rgb(255, 121, 198)"
+      }
+    },
+    {
+      types: ["keyword", "variable"],
+      style: {
+        color: "rgb(189, 147, 249)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["comment"],
+      style: {
+        color: "rgb(98, 114, 164)"
+      }
+    },
+    {
+      types: ["attr-name"],
+      style: {
+        color: "rgb(241, 250, 140)"
+      }
+    }
+  ]
+};
+
+export default theme;
+```
+
+To modify this file, I am first going to remove the types since I am not using TypeScript. Then, I will define a set of color variables at the top of the file.
+
+```js
+// src/themes/seventysix.js
+
 ```
