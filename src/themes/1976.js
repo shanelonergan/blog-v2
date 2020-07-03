@@ -1,4 +1,4 @@
-const darkBrown= '#744f25'
+const darkBrown = '#744f25'
 const brown = '#2b1d0e'
 const yellow = '#f1d248'
 const orange = '#fe8c1b'
