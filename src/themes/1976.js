@@ -1,23 +1,27 @@
-// @flow
-// Original: https://github.com/dracula/visual-studio-code
-// Converted automatically using ./tools/themeFromVsCode
+const darkBrown= '#744f25'
+const brown = '#2b1d0e'
+const yellow = '#f1d248'
+const orange = '#fe8c1b'
+const red = '#fb4f28'
+const teal = '#8ff0e0'
+const cream = '#fffbf1'
 
 const theme = {
   plain: {
-    color: "#fffbf1",
-    backgroundColor: "#2b1d0e"
+    color: cream,
+    backgroundColor: brown
   },
   styles: [
     {
-      types: ["prolog", "constant", "builtin", "important", "deleted", "type"],
+      types: ["prolog", "constant", "builtin", "important", "deleted", "type", "attr-name"],
       style: {
-        color: "#ff441a"
+        color: red
       }
     },
     {
       types: ["inserted", "function"],
       style: {
-        color: "#f1d248"
+        color: yellow
       }
     },
     // {
@@ -29,38 +33,38 @@ const theme = {
     {
       types: ["changed"],
       style: {
-        color: "#f1d248"
+        color: yellow
       }
     },
     {
       types: ["punctuation", "symbol"],
       style: {
-        color: "#8ff0e0"
+        color: teal
       }
     },
     {
-      types: ["string", "char", "tag", "selector"],
+      types: ["string", "char", "selector"],
       style: {
-        color: "#8ff0e0"
+        color: teal
       }
     },
     {
       types: ["keyword", "variable", "boolean", "number"],
       style: {
-        color: "#fe8c1b",
+        color: orange,
         fontStyle: "italic"
       }
     },
     {
       types: ["comment"],
       style: {
-        color: "#744f25"
+        color: darkBrown
       }
     },
     {
-      types: ["attr-name"],
+      types: ["tag"],
       style: {
-        color: "#f1d248"
+        color: yellow
       }
     }
   ]

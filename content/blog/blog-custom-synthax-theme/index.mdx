@@ -13,3 +13,41 @@ This week, I decided to finally build a new blog. Previously, I had been publish
 ## Prerequisits
 
 This guide will assume that you already have prism-react-rendering set up in your blog. If you do not, I would reccomend following the intallation instructions in the [docs](https://github.com/FormidableLabs/prism-react-renderer#installation). You can also check out this [guide](https://prince.dev/prism-react-renderer) about migrating from gatsby-remark-prismjs to prism-react-renderer by [Prince Wilson](https://twitter.com/maxcell).
+
+## Changing the default theme
+
+If you simply want to chnage your synthax theme to one of the commonly used, prism-react-renderer ships with a bunch out of the box. The default is duotone dark, but there are also some classics such as dracula and nightowl. You can find a full list [here](https://github.com/FormidableLabs/prism-react-renderer/tree/master/src/themes).
+
+To switch themes, you need to import it and then pass it as the value for the theme prop in the `Highlight` component.
+
+```jsx
+import React from 'react'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import dracula from 'prism-react-renderer/themes/dracula'
+
+
+export const Code = ({ codeString, language, ...props }) => {
+    return (
+      <div className='code'>
+        <Highlight
+            {...defaultProps}
+            code={codeString}
+            language={language}
+            theme={dracula}
+        >
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <pre className={className} style={style}>
+                {tokens.map((line, i) => (
+                <div {...getLineProps({ line, key: i })}>
+                    {line.map((token, key) => (
+                    <span {...getTokenProps({ token, key })} />
+                    ))}
+                </div>
+                ))}
+            </pre>
+            )}
+        </Highlight>
+      </div>
+    )
+}
+```
