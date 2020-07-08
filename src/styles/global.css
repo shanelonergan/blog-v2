@@ -68,6 +68,7 @@ ul {
 
 .bio {
   margin-bottom: 0;
+  align-self: center;
 }
 
 .bio a {
@@ -229,3 +230,4 @@ ul {
   }
 
 }
+
