@@ -72,3 +72,37 @@ whitney.sleep # ✅
 
 What if we have a separated set of methods we wanted to be able to add to any class in any inheritance chain? We can use a module! A module is similar to a class in that it contains methods in order to be re-used. Modules can not be instantiated though, meaning you can not create a new instance using the `new` method. Modules can be included inside a class, giving that class to anything contained within the module.
 
+```ruby
+module BreathSupport
+    def deep_breath
+        puts "💨"
+    end
+end
+
+class Singer < Performer
+    include BreathSupport
+
+    def sing
+        puts "🎶 La La La 🎶"
+    end
+end
+
+class Actor < Performer
+    include BreathSupport
+
+    def monologue
+        puts "To be or not to be... 💀"
+    end
+end
+
+audra = Singer.new
+kenneth = Actor.new
+audra.deep_breath # ✅
+kenneth.deep_breath # ✅
+```
+
+Now any instance created from either the Actor and Singer class will have access to the deep_breath method defined inside the BreathSupport module.
+
+## Inheritance vs Modules
+
+
