@@ -3,9 +3,11 @@ title: 'Modules vs Inheritance in Ruby'
 date: '2020-07-11'
 ---
 
-Ruby is an Object-Oriented Programming (OOP) language, and the Classes are the fundamental building blocks of OOP. Classes are blueprints for creating objects, and describe the behavior and properties each will have. Lets say, for example, you own a copy of The Great Gatsby by F. Scot Fitzgerald. That individual copy is an object, specifically a book. All books share specific properties, having a title, an author, number of pages, etc. Classes are the re-usable blueprint that let you  create each individual object.
+I was recently asked in an interview what the difference between modules and inheritance in Ruby is, and when I would use one over the other. I struggled a bit to come up with a clear answer, so I knew it was time to brush up on my Ruby!
 
-Now, lets say you have multiple classes that share behaviors. Instead of rewriting all that code in each class, Ruby provides a few ways to create reusable code. In this post I will walk you through two ways to provide reusable behaviors to classes: inheritance and modules.
+Ruby is an Object-Oriented Programming (OOP) language, and Classes are the fundamental building blocks of OOP. Classes are blueprints for creating objects, and describe the behavior and properties each instance will have. Let's say, for example, that I am a person. I am an individual instance of a person, Shane. All people share specific properties, such as having a name, eating, drinking, sleeping, etc. In Ruby, you could say I belong to the `Person` class, which contains all these shared properties and behaviors. Classes are the re-usable blueprint that let you create each individual instance.
+
+Now, let's say you have multiple classes that share behaviors. Instead of rewriting all that code in each class, Ruby provides a few ways to create reusable code. In this post I will walk you through two ways to provide reusable behaviors to classes: inheritance and modules.
 
 ## Inheritance
 
@@ -70,7 +72,7 @@ whitney.sleep # ✅
 
 ## Modules
 
-What if we have a separated set of methods we wanted to be able to add to any class in any inheritance chain? We can use a module! A module is similar to a class in that it contains methods in order to be re-used. Modules can not be instantiated though, meaning you can not create a new instance using the `new` method. Modules can be included inside a class, giving that class to anything contained within the module.
+What if we have a separated set of methods we want to be able to add to any class in any inheritance chain? We can use a module! A module is similar to a class in that it contains methods in order to be re-used. Modules can not be instantiated though, meaning you can not create a new instance using the `new` method. Modules can be included inside a class, giving that class access to anything contained within the module.
 
 ```ruby
 module BreathSupport
@@ -106,7 +108,7 @@ Now any instance created from either the `Actor` or `Singer` class will have acc
 ## Inheritance vs Modules
 
 So, when should you use a module instead of inheriting from a class? A good rule of thumb is to consider is whether or not you will want to create an instance based on the functionality you desire. If so, you will want to create a class as you cannot create instances of modules.
-If not, you can likely use a module to accomplish the behavior you want, and it can be included in any classes which require it.
+If not, you can likely use a module to accomplish the behavior you want, and it can be included in any classes which require it. Additionally, if you want to create a blueprint that is a more specific version of a class that already exists, including all of the contents of that class, that would be the perfect time to use inheritance.
 
 ---
 
