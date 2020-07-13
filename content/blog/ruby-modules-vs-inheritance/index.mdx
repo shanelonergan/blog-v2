@@ -5,11 +5,11 @@ date: '2020-07-11'
 
 Ruby is an Object-Oriented Programming (OOP) language, and the Classes are the fundamental building blocks of OOP. Classes are blueprints for creating objects, and describe the behavior and properties each will have. Lets say, for example, you own a copy of The Great Gatsby by F. Scot Fitzgerald. That individual copy is an object, specifically a book. All books share specific properties, having a title, an author, number of pages, etc. Classes are the re-usable blueprint that let you  create each individual object.
 
-Now, lets say you have multiple classes that share behaviors. Instead of re-writing all that code in each class, Ruby provides a few ways to create re-usable code. In this post I will walk you through two ways to provide re-usable behaviors to classes: inheritance and modules.
+Now, lets say you have multiple classes that share behaviors. Instead of rewriting all that code in each class, Ruby provides a few ways to create reusable code. In this post I will walk you through two ways to provide reusable behaviors to classes: inheritance and modules.
 
 ## Inheritance
 
-If you want to create a class which has all of the attributes and methods of another class, but is more specified, you can use inheritance. By inheriting from a parent class, the child class will have access to all behaviors the parent has. For example a Singer is a more specific version of a Performer, which is a more specific version of a Person. A Performer would inherit all the behavior of a person, and a singer would inherit from a Performer. In Ruby, it would look like this:
+If you want to create a class which has all of the attributes and methods of another class, but is more specified, you can use inheritance. By inheriting from a parent class, the child class will have access to all behaviors the parent has. For example, a `Singer` is a more specific version of a `Performer`, which is a more specific version of a `Person`. A `Performer` would inherit all the behavior of a `Person`, and a `Singer` would inherit from a `Performer`. In Ruby, it would look like this:
 
 ```ruby
 class Person
@@ -31,7 +31,7 @@ class Person
     end
 
     def drink
-        puts "slurp"
+        puts "Slurp"
     end
 
     def sleep
@@ -101,7 +101,7 @@ audra.deep_breath # ✅
 kenneth.deep_breath # ✅
 ```
 
-Now any instance created from either the Actor and Singer class will have access to the deep_breath method defined inside the BreathSupport module.
+Now any instance created from either the `Actor` or `Singer` class will have access to the `deep_breath` method defined inside the `BreathSupport` module.
 
 ## Inheritance vs Modules
 
@@ -110,6 +110,6 @@ If not, you can likely use a module to accomplish the behavior you want, and it 
 
 ---
 
-## Congrats
+## Congrats!
 
 You know know how to get started working with class inheritance and modules in ruby. Thank you for reading, and good lucky with your projects!
