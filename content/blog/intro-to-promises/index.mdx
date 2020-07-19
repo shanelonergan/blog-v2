@@ -18,3 +18,14 @@ A promise is an special JavaScript object which will return a single value in th
 3. fulfilled: a promise which has successfully completed its job
 
 ## Building a promise
+
+The basic syntax for constructing a promise looks ike this:
+
+```js
+let promise = new Promise(function(resolve, reject) {
+  // executor function
+});
+```
+
+The `new Promise` syntax is know as the constructor, and it is used to create a new instance of a promise. The function we pass this constructor is known as the executor function, and will contain the work we want our promise to do. The executor function will be called automatically when the promise is created. The executor also takes two arguments, `resolve` and `reject`. These are callback functions pre-defined in JavaScript, and they are called in the executor depending on whether it was "successful" or not. If the executor was successful, it will call `resolve`, and the promise state will be changed to fulfilled. If it produced an error, then it will call `reject` and the state will be shifted to rejected.
+
