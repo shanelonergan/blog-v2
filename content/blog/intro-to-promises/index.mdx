@@ -37,4 +37,22 @@ In this example, we use es6 arrow function syntax, and we omit the `reject` argu
 
 ## Chaining off a promise
 
-All promises include a `.then()` method which you can call on the promise in order to utilize the resolved or rejected value.
+All promises include a `.then()` method which you can call on the promise in order to utilize the resolved or rejected value. We can use this on the promise defined above to print 'Hello!' to the console after waiting 3 seconds (3000 milliseconds), like so:
+
+```js
+hello(3000).then(() => console.log("Hello!"))
+```
+
+As shown above, `.then` accepts a callback function which is called after the promise is either resolved or rejected. This function is actually called with whatever value we pass into the `resolve()` or `reject()` function.
+
+```js
+const resolveOrReject = (time, option) => new Promise((resolve, reject) => {
+    if (option === "resolve") {
+        setTimeout(() => resolve("resolved!"), time)
+    } else if (option === "reject") {
+        setTimeout(() => reject("rejected!"), time)
+    }
+})
+
+resolveOrReject(3000, "reject").then(((output) => console.log(output)))
+```
