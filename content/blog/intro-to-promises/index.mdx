@@ -10,3 +10,11 @@ This makes writing the code somewhat less complex, as it allows you to avoid [co
 Luckily, modern JavaScript has begun to implement features to handle these situations, known as asynchronous programming. These features include asynchronous callbacks, promises, and async/await functions. In this post, I am going to walk through the basics of promises and how to use them.
 
 ## What is a promise?
+
+A promise is an special JavaScript object which will return a single value in the future: either a "resolved" value, or a reason it wasn't resolved, such as an error. It is called a promise because it is essentially an object which "promises" you a value in the future, but doesn't have it yet. Promises can exist in 3 states:
+
+1. pending: a newly created promise which has yet to complete it's work.
+2. rejected: a promise which has failed to complete its job,
+3. fulfilled: a promise which has successfully completed its job
+
+## Building a promise
