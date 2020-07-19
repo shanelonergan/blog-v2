@@ -1,0 +1,8 @@
+---
+title: 'A Brief Introduction to Promises in JavaScript'
+date: '2020-07-19'
+---
+
+JavaScript is a single-threaded programming language. A thread, short for thread of execution, is a context in which the language can do work. In a multi-threaded language, one thread can handle a task while another thread simultaneously can work an a separate task. Humans, for example, are multi-threaded: You can scratch your head with one hand while surfing the internet with the other. In JavaScript, this means that only one task be be on the thread at a time, before it is completed and the next one begins. To put it more simply, you can only do one thing at a time.
+
+This makes writing the code somewhat less complex, as it allows you to avoid [concurrency issues](https://www.educative.io/blog/multithreading-and-concurrency-fundamentals) which can happen when the work being done on multiple threads interfere with each other. However,  this also makes it difficult to perform long operations, such as requesting data from an API, without blocking the thread for an extended period of time.
