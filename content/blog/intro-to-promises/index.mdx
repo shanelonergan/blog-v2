@@ -22,10 +22,19 @@ A promise is an special JavaScript object which will return a single value in th
 The basic syntax for constructing a promise looks ike this:
 
 ```js
-let promise = new Promise(function(resolve, reject) {
+const promise = new Promise(function(resolve, reject) {
   // executor function
 });
 ```
 
-The `new Promise` syntax is know as the constructor, and it is used to create a new instance of a promise. The function we pass this constructor is known as the executor function, and will contain the work we want our promise to do. The executor function will be called automatically when the promise is created. The executor also takes two arguments, `resolve` and `reject`. These are callback functions pre-defined in JavaScript, and they are called in the executor depending on whether it was "successful" or not. If the executor was successful, it will call `resolve`, and the promise state will be changed to fulfilled. If it produced an error, then it will call `reject` and the state will be shifted to rejected.
+The `new Promise` syntax is know as the constructor, and it is used to create a new instance of a promise. The function we pass this constructor is known as the executor function, and will contain the work we want our promise to do. The executor function will be called automatically when the promise is created. The executor also takes two arguments, `resolve` and `reject`. These are callback functions pre-defined in JavaScript, and they are called in the executor depending on whether it was "successful" or not. If the executor was successful, it will call `resolve`, and the promise state will be changed to fulfilled. If it produced an error, then it will call `reject` and the state will be shifted to rejected. Here is an example of a promise function which will wait a specified amount of time before resolving:
 
+```js
+const hello = time => new Promise((resolve) => setTimeout(resolve, time))
+```
+
+In this example, we use es6 arrow function syntax, and we omit the `reject` argument. Both arguments are technically optional, so you can choose to only include the ones which you use.
+
+## Chaining off a promise
+
+All promises include a `.then()` method which you can call on the promise in order to utilize the resolved or rejected value.
