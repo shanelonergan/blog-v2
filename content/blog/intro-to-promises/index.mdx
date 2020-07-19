@@ -54,5 +54,25 @@ const resolveOrReject = (time, option) => new Promise((resolve, reject) => {
     }
 })
 
-resolveOrReject(3000, "reject").then(((output) => console.log(output)))
+resolveOrReject(3000, "resolve").then(((output) => console.log(output)))
 ```
+
+This function will wait 3 seconds, and the log "resolved!" in the console if it was called with the resolve option. If it was called with the reject option, it will wait three seconds and then return an error with the message "rejected!"
+
+## Promises in practice
+
+If you use JavaScript to interact with other APIs, you are likely familiar with `fetch()`. The Fetch API provides a JavaScript interface for handling HTTP requests and responses. The `fetch()` function returns a promise, and is often one of the first places a JS developer will encounter promises and async programming. A typical fetch request will look something like this:
+
+```js
+fetch('http://example.com/movies')
+  .then(response => response.json())
+  .then(moviesObj => console.log(moviesObj));
+```
+
+As you can see, this process involves chaining `.then()` callbacks to handle the promise returned by `fetch()` and convert it into usable data. Using a promise ensures that JavaScript's single thread isn't completely blocked if the fetch request takes a while to return the data.
+
+---
+
+## Congrats!
+
+You know understand what a promise is, and how to use them. I hope you enjoyed this post, and that it provided some insight into the world of asynchronous programming in JavaScript!
